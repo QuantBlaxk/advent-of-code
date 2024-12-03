@@ -1,0 +1,1 @@
+cat ../input.txt | tr '\n' ' ' | sed "s/^/do\(\)/;s/$/don't\(\)/" | grep -oP "(?<=do\(\)).*?(?=don't\(\))" | grep -oP 'mul\(\d+,\d+\)' | sed 's/mul//g;s/,/*/g' | paste -sd+ | bc

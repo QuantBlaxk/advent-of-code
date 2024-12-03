@@ -1,0 +1,1 @@
+grep -oP 'mul\(\d+,\d+\)' ../input.txt | sed 's/mul//g;s/,/*/g' | paste -sd+ | bc
