@@ -1,0 +1,1 @@
+grep 'x' ../input.txt | sed 's/\([0-9][0-9]*\) /\1 + /g;s/x/ * /;s/:/ \/ 7 >/' | xargs -L1 expr | paste -sd+ | bc
