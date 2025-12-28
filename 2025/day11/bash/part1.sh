@@ -1,0 +1,1 @@
+sed -f <(echo ":a") -f <(sed 's/:/ /; s/^\([^ ]*\) \(.*\)$/s\/\1\/\2\/g/' ../input.txt) -f <(echo "ta") <(echo "you") | grep -o out | wc -l
