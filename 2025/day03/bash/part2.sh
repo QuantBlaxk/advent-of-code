@@ -1,0 +1,1 @@
+jq -Rr 'select(length > 0) | split("") | map(tonumber) | {s: [], k: (length - 12)} as $init | reduce .[] as $x ($init; until(.k <= 0 or (.s | length) == 0 or .s[-1] >= $x; .s |= .[:-1] | .k -= 1) | .s += [$x]) | .s[:12] | join("")' ../input.txt | paste -sd+ | bc
